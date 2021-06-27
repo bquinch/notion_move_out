@@ -60,7 +60,7 @@ jobs:
           POSTGRES_HOST: ${{ env.DB_HOST }}
           POSTGRES_USER: ${{ env.POSTGRES_USER }}
           POSTGRES_PASSWORD: ${{ env.POSTGRES_PASSWORD }}
-          POSTGRES_DB: rspec_crud_test
+          POSTGRES_DB: notion_move_out_test
           POSTGRES_PORT: ${{ job.services.postgres.ports[5432] }}
         run: |
           cp config/database.yml config/database.yml.ci
