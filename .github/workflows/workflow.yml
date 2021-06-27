@@ -24,7 +24,7 @@ jobs:
     runs-on: ubuntu-18.04
     services:
       postgres:
-        image: postgres:lastest
+        image: postgres:11
         ports: ['5432:5432']
         env:
           RAILS_ENV: test
