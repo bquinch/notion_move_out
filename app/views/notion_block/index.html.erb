@@ -1,0 +1,21 @@
+<ul class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 xl:grid-cols-2 gap-4">
+  <% @blocks.each do |notion_block| %>
+    <div class="hover:bg-light-blue-500 hover:border-transparent hover:shadow-lg group block rounded-lg p-4 border border-gray-200">
+      <dl class="grid sm:block lg:grid xl:block grid-cols-2 grid-rows-2 items-center">
+        <div>
+          <dd class="group-hover:text-light-blue-200 leading-6 font-medium text-black">
+            <%= notion_block.to_do.text %>
+          </dd>
+        </div>
+        <div>
+          <dd class="text-sm font-medium sm:mb-4 lg:mb-0 xl:mb-4">
+            <%= simple_form_for notion_block.to_do, method: :patch do |f| %>
+              <%= f.input :checked, as: :boolean, label: false, input_html: { onchange: "this.form.submit()" } %>
+              <%= f.submit "", style: "display: none" %>
+            <% end %>
+          </dd>
+        </div>
+      </dl>
+    </div>
+  <% end %>
+</ul>
